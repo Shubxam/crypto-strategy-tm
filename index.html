@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Exercise 2</title>
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+		<!-- Theme used for syntax highlighted code -->
+<link rel="stylesheet" href="plugin/highlight/zenburn.min.css" id="highlight-theme"></head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<section data-markdown  ><textarea data-template>
+[comment]: # (This presentation was made with markdown-slides)
+[comment]: # (This is a CommonMark compliant comment. It will not be included in the presentation.)
+[comment]: # (Compile this presentation with the command below)
+[comment]: # (mdslides presentation.md --include media)
+
+[comment]: # (Set the theme:)
+[comment]: # (The list of themes is at https://revealjs.com/themes/)
+[comment]: # (The list of code themes is at https://highlightjs.org/)
+
+[comment]: # "You can also use quotes instead of parenthesis"
+[comment]: # 'Single quotes work too'
+
+[comment]: # (Pass optional settings to reveal.js:)
+[comment]: # (markdown: { smartypants: true })
+[comment]: # (Other settings are documented at https://revealjs.com/config/)
+
+
+### Exercise 2
+## Trading Strategy Code Presentation
+
+[comment]: # (A comment starting with three or more !!! marks a slide break.)
+</textarea></section>
+<section>
+<section data-markdown  ><textarea data-template>
+
+Predefined Backtesting Parameters:
+- Moving Average Period: 50
+- Backtesting Period: 2018-04-07 to 2023-05-21
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+Risk Management Parameters
+- Stoploss: 5%
+- Stopwin: 30%
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+Broker Parameters
+- Starting Cash: 60000
+- broker commission: 0.1% of trade value
+
+</textarea></section>
+</section>
+<section>
+<section data-markdown  ><textarea data-template>
+
+Metrics Used to assess the Strategies:
+
+----------
+
+$$\text{Sharpe Ratio} = \frac{\text{Expected Return} - \text{Risk Free Rate}}{\text{Standard Deviation}}$$
+
+Asseses Risk Adjusted Return of Asset
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+**Max Drawdown**
+
+------
+
+ it measures the maximum loss an investor would have experienced if they invested in a particular cryptocurrency or portfolio at its peak and then sold it at the lowest point during a specified time period.
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+- Avg win per winning trade: $$\frac{Profit}{\text{No of Win Trades}}$$
+- Avg Loss per lost trade: $$\frac{Loss}{\text{No of Lost Trades}}$$
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+- Cumulative Profit and Loss
+- Avg PnL per Trade: $$\frac{\text{Cum PnL}}{\text{No of trades}}$$
+
+</textarea></section>
+</section>
+<section data-markdown  ><textarea data-template>
+
+Returns of Strategies
+
+----------
+
+![Strategy Returns](assets/strat-returns.png)
+
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+Problems arise due to unavailability of finely granular data.
+- less no of trades executed.
+- order is executed on the next available data point after being placed which introduces difference in realized gains.
+
+</textarea></section>
+<section>
+<section data-markdown  ><textarea data-template>
+
+Description of Column Names
+
+----------
+
+Apart from usual OHLCV columns, our dataset contains:
+
+- **signal**: bullish/bearish signal from TokenMetrics API
+- **ma_20**: 20 period SMA of Close Price
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+- **distance**: close price - ma_20
+- **yearly_high**: 52week high
+- **yearly_low**: 52week low
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+- **diff**: 52 week high - 52 week low
+- **top_5**: Is the distance value for current date is in top 5 percentile of all distance values in last 1 year i.e. is the deviation from the mean value significant
+
+
+</textarea></section>
+</section>
+<section data-markdown  ><textarea data-template>
+
+## Tools Used
+
+- Backtrader Python Library (for Backtesting)
+
+
+</textarea></section>
+<section data-markdown  ><textarea data-template>
+
+- [Github Repository Link](https://github.com/shubxam/crypto-strategy-tm)
+
+</textarea></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+Reveal.initialize({
+controls : false,
+markdown : {smartypants: true},
+controls : true,
+keyboard : true,
+hash : false,
+respondToHashChanges : false,
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
