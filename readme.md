@@ -1,5 +1,7 @@
 # Crypto Trading and Backtesting Setup using Python
 
+[View the presentation here](http://www.shubxam.codes/crypto-strategy-tm/presentation/index.html)
+
 >Default Parameters
 > - Stoploss: 5%
 > - Stopwin: 30%
