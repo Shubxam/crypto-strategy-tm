@@ -1,6 +1,6 @@
 # Crypto Trading and Backtesting Setup using Python
 
-[See the related presentation here](./index.html)
+[See the related presentation here](./presentation/index.html)
 
 >Default Parameters
 > - Stoploss: 5%
