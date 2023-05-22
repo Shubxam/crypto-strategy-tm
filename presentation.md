@@ -118,6 +118,6 @@ Apart from usual OHLCV columns, our dataset contains:
 
 [comment]: # (!!!)
 
-- [Github Repository Link](https://github.com/shubxam/crypto-strategy-tm)
+Find the jupyter notebook on the [Github Repository](https://github.com/shubxam/crypto-strategy-tm).
 
 [comment]: # (!!!)
