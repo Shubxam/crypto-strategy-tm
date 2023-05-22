@@ -1,5 +1,7 @@
 # Crypto Trading and Backtesting Setup using Python
 
+[See the related presentation here](./index.html)
+
 >Default Parameters
 > - Stoploss: 5%
 > - Stopwin: 30%
@@ -17,3 +19,5 @@ Metrics used to assess the best strategy:
 - (Cum PnL)/(No of trades) = Avg PnL per Trade
 
 ![Strategy-Returns](./assets/strat-returns.png)
+
+
